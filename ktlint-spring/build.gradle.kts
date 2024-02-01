@@ -31,6 +31,8 @@ tasks.withType<KotlinCompile> {
         freeCompilerArgs += "-Xjsr305=strict"
         jvmTarget = "21"
     }
+
+    dependsOn("initHooksPath")
 }
 
 tasks.withType<Test> {
@@ -39,10 +41,4 @@ tasks.withType<Test> {
 
 tasks.register<Exec>("initHooksPath") {
     commandLine("git", "config", "core.hooksPath", ".githooks")
-}
-
-allprojects {
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        dependsOn("initHooksPath")
-    }
 }
