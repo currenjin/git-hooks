@@ -39,6 +39,6 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.register<Exec>("initHooksPath") {
+task<Exec>("initHooksPath") {
     commandLine("git", "config", "core.hooksPath", ".githooks")
 }
