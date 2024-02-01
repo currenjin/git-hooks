@@ -38,6 +38,11 @@ tasks.withType<Test> {
 }
 
 tasks.register<Exec>("initHooksPath") {
-    commandLine("echo", "hello")
     commandLine("git", "config", "core.hooksPath", ".githooks")
+}
+
+allprojects {
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        dependsOn("initHooksPath")
+    }
 }
