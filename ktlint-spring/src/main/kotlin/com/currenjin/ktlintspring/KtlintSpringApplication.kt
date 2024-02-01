@@ -6,5 +6,6 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class KtlintSpringApplication
 
-fun main(args: Array<String>) { runApplication<KtlintSpringApplication>(*args)
+fun main(args: Array<String>) {
+    runApplication<KtlintSpringApplication>(*args)
 }
