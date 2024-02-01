@@ -9,5 +9,4 @@ class KtlintSpringApplicationTests {
     @Test
     fun contextLoads() {
     }
-
 }
