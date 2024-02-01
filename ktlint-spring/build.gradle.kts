@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.gradle.api.tasks.Exec
 
 plugins {
     id("org.springframework.boot") version "3.2.2"
