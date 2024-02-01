@@ -8,7 +8,8 @@
 
 echo "Checking code formatting"
 
-./ktlint-spring/gradlew ktlintCheck --daemon
+cd ./ktlint-spring
+./gradlew ktlintCheck --daemon
 
 status=$?
 
