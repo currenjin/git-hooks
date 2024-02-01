@@ -32,13 +32,12 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "21"
     }
 
-    dependsOn("initHooksPath")
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-task<Exec>("initHooksPath") {
+exec {
     commandLine("git", "config", "core.hooksPath", ".githooks")
 }
