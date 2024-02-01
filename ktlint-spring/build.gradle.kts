@@ -35,3 +35,8 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.register<Exec>("initHooksPath") {
+    commandLine("echo", "hello")
+    commandLine("git", "config", "core.hooksPath", ".githooks")
+}
