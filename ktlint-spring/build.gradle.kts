@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.gradle.api.tasks.Exec
 
 plugins {
     id("org.springframework.boot") version "3.2.2"
@@ -32,12 +31,13 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "21"
     }
 
+    dependsOn("initHooks")
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-exec {
-    commandLine("git", "config", "core.hooksPath", ".githooks")
+tasks.register<org.gradle.api.tasks.Exec>("initHooks") {
+    commandLine = listOf("git", "config", "core.hooksPath", ".githooks")
 }
