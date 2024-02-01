@@ -38,6 +38,6 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.register<org.gradle.api.tasks.Exec>("initHooks") {
+tasks.register<Exec>("initHooks") {
     commandLine = listOf("git", "config", "core.hooksPath", ".githooks")
 }
